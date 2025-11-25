@@ -1,18 +1,19 @@
 #include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
+// LED接在GPIO22
+const int LED_PIN = 22;
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  // 設置GPIO22為輸出模式
+  pinMode(LED_PIN, OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  // LED亮0.5秒
+  digitalWrite(LED_PIN, HIGH);
+  delay(500);
+  
+  // LED滅0.5秒
+  digitalWrite(LED_PIN, LOW);
+  delay(500);
 }
